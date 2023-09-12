@@ -58,7 +58,7 @@ class Payment extends \Magento\Payment\Model\Method\Cc
         $this->_stripeApi->setApiKey(
             $this->getConfigData('api_key')
         );
-
+        $this->_stripeApi->setVerifySslCerts(false);
         $this->_minAmount = $this->getConfigData('min_order_total');
         $this->_maxAmount = $this->getConfigData('max_order_total');
     }
